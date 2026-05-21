@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrainForce Pro | Expert Drainage Engineers — Available 24/7</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a0f1e;
+  --navy-mid: #111828;
+  --red: #e8132a;
+  --red-dark: #b00f20;
+  --gold: #f0a500;
+  --gold-light: #ffd166;
+  --white: #ffffff;
+  --off-white: #f8f6f2;
+  --gray: #8a8f9e;
+  --light-gray: #e8e9ee;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--navy);
+  padding: 10px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #aab0c2;
+}
+.topbar a { color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: .03em; }
+.topbar span { margin-right: 20px; }
+
+/* ── HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(10,15,30,.97);
+  backdrop-filter: blur(12px);
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid rgba(240,165,0,.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--red);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 16px;
+  background: white;
+  border-radius: 2px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-text .brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: .08em;
+  color: white;
+  line-height: 1;
+}
+.logo-text .brand span { color: var(--gold); }
+.logo-text .tagline {
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+nav a {
+  color: #c5cad8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+nav a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--red);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--red-dark) !important; color: white !important; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(232,19,42,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 30% 80%, rgba(240,165,0,.07) 0%, transparent 50%);
+}
+
+/* Animated pipeline graphic */
+.hero-pipeline {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 52%;
+  height: 100%;
+  opacity: .12;
+  background: repeating-linear-gradient(
+    -15deg,
+    transparent,
+    transparent 60px,
+    rgba(255,255,255,.04) 60px,
+    rgba(255,255,255,.04) 62px
+  );
+}
+
+.hero-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(232,19,42,.06) 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Real photo placeholder using Unsplash for drain work */
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .25;
+  filter: grayscale(30%) contrast(1.1);
+}
+
+.hero-overlay-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, var(--navy) 0%, transparent 40%),
+              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&auto=format&fit=crop&q=80') center/cover;
+  opacity: .45;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 6%;
+  max-width: 760px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232,19,42,.15);
+  border: 1px solid rgba(232,19,42,.4);
+  color: #ff6b7a;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeUp .6s ease both;
+}
+.hero-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(232,19,42,.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(232,19,42,.4); }
+  70% { box-shadow: 0 0 0 10px rgba(232,19,42,0); }
+  100% { box-shadow: 0 0 0 0 rgba(232,19,42,0); }
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: .95;
+  color: white;
+  letter-spacing: .02em;
+  margin-bottom: 28px;
+  animation: fadeUp .7s ease .1s both;
+}
+.hero h1 .highlight {
+  color: var(--gold);
+  display: block;
+}
+.hero h1 .outline {
+  -webkit-text-stroke: 2px rgba(255,255,255,.25);
+  color: transparent;
+  display: block;
+}
+
+.hero-desc {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #8a95ad;
+  margin-bottom: 42px;
+  max-width: 580px;
+  animation: fadeUp .7s ease .2s both;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  color: white;
+  padding: 16px 34px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: .04em;
+  transition: all .2s;
+  box-shadow: 0 8px 32px rgba(232,19,42,.35);
+}
+.btn-primary:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(232,19,42,.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+  padding: 16px 34px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: .04em;
+  transition: all .2s;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  animation: fadeUp .7s ease .4s both;
+}
+.hero-stat h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--gold);
+  letter-spacing: .02em;
+  line-height: 1;
+}
+.hero-stat p {
+  font-size: 12px;
+  color: var(--gray);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 6%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  animation: fadeUp .7s ease .6s both;
+}
+.scroll-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gray);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--navy-mid);
+  padding: 26px 6%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8a95ad;
+  font-size: 14px;
+  font-weight: 500;
+}
+.trust-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(240,165,0,.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 100px 6%; }
+
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 4vw, 56px);
+  letter-spacing: .03em;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+.section-sub {
+  font-size: 17px;
+  color: #5a6175;
+  line-height: 1.8;
+  max-width: 680px;
+  font-weight: 300;
+}
+
+/* ── WHY US ── */
+.why-us { background: var(--off-white); }
+.why-us .section-title { color: var(--navy); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.why-image-col {
+  position: relative;
+}
+.why-image-box {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&auto=format&fit=crop&q=80') center/cover;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.why-image-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,15,30,.7) 0%, transparent 60%);
+  border-radius: 12px;
+}
+.why-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  z-index: 2;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 16px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.why-badge strong {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.why-features {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 40px;
+}
+.why-feature {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.why-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--red);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.why-feature h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--navy);
+}
+.why-feature p {
+  font-size: 14px;
+  color: #606878;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--navy); }
+.services .section-title { color: white; }
+.services .section-sub { color: #7a8296; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-card {
+  background: var(--navy-mid);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+  cursor: default;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--red);
+  transition: height .3s;
+}
+.service-card:hover::before { height: 100%; }
+.service-card:hover { background: #161e30; }
+
+.service-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  color: rgba(255,255,255,.04);
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  letter-spacing: .02em;
+  line-height: 1;
+  transition: color .3s;
+}
+.service-card:hover .service-number { color: rgba(232,19,42,.08); }
+
+.service-icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: block;
+}
+.service-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: .01em;
+}
+.service-card p {
+  font-size: 14px;
+  color: #6a7284;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.service-card .service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 20px;
+  letter-spacing: .04em;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.service-card:hover .service-link { opacity: 1; }
+
+/* ── PROCESS ── */
+.process { background: white; }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 60px;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--light-gray);
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+.step-circle {
+  width: 64px;
+  height: 64px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: .04em;
+  position: relative;
+}
+.step-circle.active { background: var(--red); color: white; }
+
+.process-step h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+.process-step p {
+  font-size: 13px;
+  color: #7a8090;
+  line-height: 1.7;
+}
+
+/* ── PROBLEMS ── */
+.problems { background: var(--off-white); }
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.problem-card {
+  background: white;
+  border-radius: 10px;
+  padding: 32px;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all .25s;
+}
+.problem-card:hover {
+  border-color: var(--red);
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  transform: translateY(-4px);
+}
+.problem-dot {
+  width: 40px;
+  height: 40px;
+  background: rgba(232,19,42,.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.problem-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.problem-card p {
+  font-size: 13px;
+  color: #6a7080;
+  line-height: 1.7;
+}
+
+/* ── TECHNOLOGY ── */
+.technology { background: var(--navy); overflow: hidden; position: relative; }
+.technology .section-title { color: white; }
+.technology .section-sub { color: #7a8296; }
+
+.tech-bg {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,19,42,.06) 0%, transparent 70%);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 28px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  transition: all .25s;
+}
+.tech-item:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(240,165,0,.25);
+}
+.tech-item-icon {
+  font-size: 24px;
+  width: 48px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.tech-item-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+.tech-item-text p {
+  font-size: 13px;
+  color: #5a6280;
+}
+.tech-check {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+.tech-image {
+  position: relative;
+}
+.tech-image-box {
+  width: 100%;
+  aspect-ratio: 1;
+  background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80') center/cover;
+  border-radius: 12px;
+  opacity: .7;
+}
+.tech-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,15,30,.5) 0%, transparent 60%);
+  border-radius: 12px;
+}
+
+/* ── REVIEWS ── */
+.reviews { background: white; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.review-card {
+  background: var(--off-white);
+  border-radius: 12px;
+  padding: 36px;
+  position: relative;
+}
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 80px;
+  color: var(--light-gray);
+  line-height: 1;
+}
+.review-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+.review-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3a4050;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+}
+.reviewer-info strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); }
+.reviewer-info span { font-size: 12px; color: var(--gray); }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--red);
+  padding: 100px 6%;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: 'CALL NOW';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 220px;
+  color: rgba(0,0,0,.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.cta-inner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 58px);
+  color: white;
+  letter-spacing: .03em;
+  line-height: 1.1;
+}
+.cta-inner h2 span { color: var(--gold-light); }
+.cta-inner p {
+  color: rgba(255,255,255,.75);
+  font-size: 17px;
+  margin-top: 10px;
+  font-weight: 300;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+.cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  color: var(--navy);
+  padding: 18px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: .04em;
+  transition: all .2s;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.cta-phone:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+.cta-email {
+  color: rgba(255,255,255,.8);
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: .04em;
+}
+.cta-email:hover { color: white; }
+
+/* ── FOOTER ── */
+footer {
+  background: #07090f;
+  padding: 70px 6% 40px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.footer-brand .brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: white;
+  letter-spacing: .08em;
+  margin-bottom: 4px;
+}
+.footer-brand .brand-name span { color: var(--gold); }
+.footer-brand .tagline {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-brand p {
+  font-size: 14px;
+  color: #5a6280;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.footer-contact-card {
+  background: rgba(240,165,0,.08);
+  border: 1px solid rgba(240,165,0,.2);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+}
+.footer-contact-card a {
+  display: block;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.footer-contact-card span {
+  font-size: 13px;
+  color: #5a6280;
+}
+
+footer h4 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 24px;
+}
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 12px; }
+footer ul a {
+  color: #5a6280;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .2s;
+}
+footer ul a:hover { color: white; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 12px;
+  color: #3a4050;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── EMERGENCY STRIP ── */
+.emergency-strip {
+  background: var(--gold);
+  padding: 14px 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.emergency-strip p {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  letter-spacing: .04em;
+}
+.emergency-strip a {
+  background: var(--navy);
+  color: var(--gold);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .why-grid, .tech-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .process-steps::before { display: none; }
+  .problems-grid, .reviews-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .trust-bar { gap: 24px; }
+  .hero-stats { gap: 24px; }
+  nav { display: none; }
+  .hero-overlay-img { display: none; }
+}
+
+@media (max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 52px; }
+  .hero-stats { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- Emergency Strip -->
+<div class="emergency-strip">
+  <p>🚨 DRAIN EMERGENCY? WE'RE AVAILABLE RIGHT NOW — 24 HOURS, 7 DAYS</p>
+  <a href="tel:07889537121">CALL 07889 537121</a>
+</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div>
+    <span>📍 Serving London & Surrounding Areas</span>
+    <span>✉ <a href="mailto:vcldrains@gmail.com">vcldrains@gmail.com</a></span>
+  </div>
+  <div>
+    <span>Mon–Sun: 24 Hours Available</span>
+    <a href="tel:07889537121">☎ 07889 537121</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <a href="#home" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <div class="brand">DrainForce <span>Pro</span></div>
+      <div class="tagline">Expert Drainage Engineers</div>
+    </div>
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#technology">Technology</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact" class="nav-cta">FREE ESTIMATE</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pipeline"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-overlay-img"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">⚡ 24/7 Emergency Response Available</div>
+    <h1>
+      Drain Blocked?
+      <span class="highlight">We Fix It Fast.</span>
+      <span class="outline">Guaranteed.</span>
+    </h1>
+    <p class="hero-desc">
+      DrainForce Pro delivers rapid, reliable drainage solutions across London and surrounding areas. High-pressure jetting, CCTV surveys, relining, and full plumbing — handled by certified drainage engineers with industry-grade equipment.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:07889537121" class="btn-primary">
+        📞 Call 07889 537121
+      </a>
+      <a href="#services" class="btn-outline">
+        View All Services →
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <h3>24/7</h3>
+        <p>Emergency Cover</p>
+      </div>
+      <div class="hero-stat">
+        <h3>FREE</h3>
+        <p>Estimates</p>
+      </div>
+      <div class="hero-stat">
+        <h3>1HR</h3>
+        <p>Response Time</p>
+      </div>
+      <div class="hero-stat">
+        <h3>14+</h3>
+        <p>Services Offered</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-line"></span>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">✓</div>
+    Free Estimates — No Call-Out Fee
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🏆</div>
+    Fully Insured Engineers
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⚡</div>
+    Industry-Grade Equipment
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">★</div>
+    5-Star Rated Service
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📋</div>
+    Honest, Transparent Pricing
+  </div>
+</div>
+
+<!-- Why Us -->
+<section class="why-us" id="about">
+  <span class="section-label">Why DrainForce Pro</span>
+  <h2 class="section-title">The Professional Choice<br>for Drainage Problems</h2>
+  <p class="section-sub">
+    When drainage issues strike, you need a team that responds fast, diagnoses accurately, and fixes the problem permanently — not just a temporary patch.
+  </p>
+
+  <div class="why-grid">
+    <div class="why-image-col">
+      <div class="why-image-box">
+        <div class="why-badge">
+          <strong>100%</strong>
+          Customer Satisfaction Focus
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:16px;color:#5a6175;line-height:1.9;font-weight:300;margin-bottom:36px;">
+        DrainForce Pro combines years of practical engineering expertise with the latest drainage technology. We handle everything from routine blockages to complex structural repairs — delivering permanent solutions backed by exceptional customer care.
+      </p>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-icon">🕐</div>
+          <div>
+            <h4>Rapid Emergency Response</h4>
+            <p>Drain emergencies can't wait. Our engineers are on-call 24 hours a day, 7 days a week — including weekends and bank holidays. Out-of-hours work is quoted directly by the attending engineer, with complete price transparency before any work begins.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🔬</div>
+          <div>
+            <h4>Precision Diagnosis Technology</h4>
+            <p>We don't guess. Our CCTV drain cameras pinpoint the exact cause — whether it's root intrusion, collapsed pipework, scale buildup, or structural faults — saving you time and unnecessary excavation costs.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🏗️</div>
+          <div>
+            <h4>Permanent Repairs, Not Patches</h4>
+            <p>Our mission is long-term resolution. From no-dig drain relining to full dig-up repairs, we solve the root cause — not just the symptom — so you're not calling us back next month for the same issue.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">💷</div>
+          <div>
+            <h4>Best Price Guarantee</h4>
+            <p>Competitive, honest pricing with free estimates on all work. We serve residential homeowners, landlords, commercial properties, restaurants, and industrial sites — all at fair rates with no hidden charges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <span class="section-label" style="color:#f0a500;">What We Do</span>
+  <h2 class="section-title">Comprehensive Drainage<br>& Plumbing Services</h2>
+  <p class="section-sub">
+    From emergency call-outs to planned maintenance, we provide a complete range of drainage solutions using professional-grade equipment.
+  </p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-number">01</span>
+      <span class="service-icon">💧</span>
+      <h3>High Pressure Drain Jetting</h3>
+      <p>Our powerful water jetting systems blast through grease, sludge, scale, wet wipes, and the most stubborn blockages — quickly and without damage to your pipes. Effective for domestic and commercial drains.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">02</span>
+      <span class="service-icon">📷</span>
+      <h3>CCTV Drain Surveys</h3>
+      <p>Advanced waterproof camera inspections reveal cracks, root intrusion, pipe collapse, blockage locations, and hidden drainage defects. Full video report provided — ideal for home buyers and landlords.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">03</span>
+      <span class="service-icon">🔧</span>
+      <h3>Drain Relining (No-Dig)</h3>
+      <p>Our modern no-dig relining technology rehabilitates damaged pipes from the inside out — without costly and disruptive excavation. Structurally restores cracked or root-damaged pipework with minimal disruption.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">04</span>
+      <span class="service-icon">🌿</span>
+      <h3>Root Cutting & Removal</h3>
+      <p>Tree root intrusion is one of the most common causes of persistent drain blockages. Our specialist electro-mechanical root cutting equipment safely removes invasive root systems from underground drainage.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">05</span>
+      <span class="service-icon">🏠</span>
+      <h3>Gutter & Downpipe Cleaning</h3>
+      <p>Professional gutter clearing with and without ladders — preventing water overflow, damp problems, and structural damage to your property. Patio and paving wash-down also available.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">06</span>
+      <span class="service-icon">🔩</span>
+      <h3>Plumbing & Appliance Services</h3>
+      <p>Kitchen and home appliance unblocks, sink and toilet repairs, pipe repairs, grease trap installations (above and below ground), tanker services, gully repairs, maintenance, and dig-up works.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">07</span>
+      <span class="service-icon">🧱</span>
+      <h3>Drainpipe Descaling</h3>
+      <p>Limescale and mineral deposits significantly reduce pipe diameter and flow capacity over time. Our high-pressure descaling restores full bore flow and extends the lifespan of your drainage system.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">08</span>
+      <span class="service-icon">⚠️</span>
+      <h3>Concrete Cutting & Dig Ups</h3>
+      <p>When non-invasive methods aren't sufficient, our team carries out full drain excavations and concrete cutting for major structural repairs, pipe replacement, and new drain installations.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+
+    <div class="service-card">
+      <span class="service-number">09</span>
+      <span class="service-icon">🚛</span>
+      <h3>Tanker & Commercial Services</h3>
+      <p>Commercial tanker equipment for high-volume drainage clearance, septic tank emptying, industrial grease trap maintenance, and large-scale commercial drainage projects for businesses and facilities.</p>
+      <a href="#contact" class="service-link">Book this service →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <span class="section-label">How It Works</span>
+  <h2 class="section-title">From Call to Cleared<br>in Four Simple Steps</h2>
+  <p class="section-sub">
+    We've streamlined our process to get your drainage issue resolved with minimum fuss and maximum speed.
+  </p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-circle active">01</div>
+      <h4>You Call Us</h4>
+      <p>Reach our team any time — day or night. We take your details and assess the urgency of your drainage problem immediately.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">02</div>
+      <h4>Fast Dispatch</h4>
+      <p>We dispatch the nearest available drainage engineer to your property, aiming for a 1-hour response on emergency call-outs.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">03</div>
+      <h4>Expert Diagnosis</h4>
+      <p>Our engineer assesses the issue using professional equipment — including CCTV cameras — and provides a clear, honest quote before work starts.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">04</div>
+      <h4>Problem Solved</h4>
+      <p>We clear the blockage or complete the repair and leave your property clean and tidy. You're back to normal — fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Problems We Solve -->
+<section class="problems">
+  <span class="section-label">Common Issues</span>
+  <h2 class="section-title">Drainage Problems<br>We Solve Every Day</h2>
+  <p class="section-sub">
+    Ignoring drainage issues leads to bigger, more expensive problems. Here's what we handle — quickly and professionally.
+  </p>
+
+  <div class="problems-grid">
+    <div class="problem-card">
+      <div class="problem-dot">🚿</div>
+      <div>
+        <h4>Blocked Kitchen & Bathroom Drains</h4>
+        <p>Grease, food waste, hair, soap scum — the most common cause of slow or completely blocked household drains. We clear them fast and identify if a deeper structural issue is the root cause.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-dot">🌊</div>
+      <div>
+        <h4>Overflowing Gullies & External Drains</h4>
+        <p>Overflowing external drains and gullies can flood gardens, driveways, and even enter properties. We respond rapidly to prevent property damage and health hazards from sewage overflow.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-dot">🔁</div>
+      <div>
+        <h4>Recurring Blockages</h4>
+        <p>If you're unblocking the same drain repeatedly, there's an underlying problem. Our CCTV surveys identify hidden defects — collapsed pipes, root intrusion, or incorrect gradients — causing repeat issues.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-dot">🚨</div>
+      <div>
+        <h4>Sewage Flooding & Backups</h4>
+        <p>Sewage backup is a serious health hazard requiring immediate action. We provide emergency same-day response for drain flooding, sewage backups, and any situation where water is entering your property.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-dot">🌿</div>
+      <div>
+        <h4>Root Intrusion in Pipes</h4>
+        <p>Tree and shrub roots are a silent drain destroyer — seeking out moisture through hairline cracks and gradually collapsing pipework. Our root cutting and relining service permanently resolves this.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-dot">💨</div>
+      <div>
+        <h4>Bad Smells from Drains</h4>
+        <p>Foul odours from drains indicate bacteria buildup, partial blockages, or damaged drain seals. We identify the exact cause and eliminate the source — not just mask the smell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology -->
+<section class="technology" id="technology">
+  <div class="tech-bg"></div>
+  <span class="section-label" style="color:#f0a500;">Our Equipment</span>
+  <h2 class="section-title">Industry-Grade Technology<br>For Every Job</h2>
+  <p class="section-sub">
+    We invest in the best drainage equipment available — ensuring accurate diagnosis and long-lasting repairs the first time.
+  </p>
+
+  <div class="tech-grid">
+    <div class="tech-list">
+      <div class="tech-item">
+        <span class="tech-item-icon">💦</span>
+        <div class="tech-item-text">
+          <h4>High Pressure Jetting Systems</h4>
+          <p>Professional-grade jetting equipment delivering up to 4000 PSI for the most stubborn commercial and domestic blockages</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-item-icon">📹</span>
+        <div class="tech-item-text">
+          <h4>CCTV Drain Inspection Cameras</h4>
+          <p>HD waterproof cameras for real-time internal pipe inspection — covering pipes from 50mm to 600mm diameter</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-item-icon">⚙️</span>
+        <div class="tech-item-text">
+          <h4>Electro-Mechanical Root Cutting</h4>
+          <p>Specialist rotary cutting heads designed to safely remove invasive root systems without damaging pipe walls</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-item-icon">📍</span>
+        <div class="tech-item-text">
+          <h4>Drain Tracing & Locating Technology</h4>
+          <p>Electronic sonde and trace equipment to pinpoint buried drain locations without excavation</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-item-icon">🛡️</span>
+        <div class="tech-item-text">
+          <h4>No-Dig Drain Relining Systems</h4>
+          <p>Cured-in-place pipe (CIPP) technology to structurally repair damaged drains from the inside — no excavation required</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-item-icon">🚛</span>
+        <div class="tech-item-text">
+          <h4>Commercial Tanker Equipment</h4>
+          <p>High-capacity tanker vehicles for large volume liquid waste removal and commercial drainage clearance</p>
+        </div>
+        <span class="tech-check">✓</span>
+      </div>
+    </div>
+
+    <div class="tech-image">
+      <div class="tech-image-box"></div>
+      <div class="tech-image-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <span class="section-label">Customer Reviews</span>
+  <h2 class="section-title">What Our Customers<br>Say About Us</h2>
+  <p class="section-sub">
+    Our reputation is built on reliability, professionalism, and results. Here's what real customers have experienced.
+  </p>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Excellent service from DrainForce Pro. Arrived within the hour and cleared a severely blocked drain that other companies had failed to fix. Very professional, left everything clean and tidy, and the price was very fair."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">JR</div>
+        <div class="reviewer-info">
+          <strong>James R.</strong>
+          <span>Residential — Blocked Drain</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"We'd had recurring drainage issues for months and two other companies couldn't find the cause. The CCTV survey identified root intrusion in a section of pipe we didn't know existed. Fixed permanently — haven't had an issue since."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">SM</div>
+        <div class="reviewer-info">
+          <strong>Sarah M.</strong>
+          <span>CCTV Survey & Repair</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Called at 11pm with sewage backing up into our kitchen. The engineer arrived within the hour, assessed the problem calmly, explained everything clearly, and had it resolved by 1am. Outstanding emergency service — cannot recommend highly enough."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">DK</div>
+        <div class="reviewer-info">
+          <strong>Daniel K.</strong>
+          <span>Emergency Call-Out</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Used them for our restaurant's grease trap installation and commercial drain jetting. Professional, knowledgeable, and they understood the specific compliance requirements for a food business. Our go-to drainage company from now on."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">RT</div>
+        <div class="reviewer-info">
+          <strong>Rebecca T.</strong>
+          <span>Commercial — Restaurant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div>
+      <h2>Got a Drain Emergency?<br><span>We're Ready Right Now.</span></h2>
+      <p>Available 24/7 — including weekends and bank holidays.<br>Free estimates. Honest pricing. No call-out fee.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:07889537121" class="cta-phone">
+        📞 07889 537121
+      </a>
+      <a href="mailto:vcldrains@gmail.com" class="cta-email">✉ vcldrains@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">DrainForce <span>Pro</span></div>
+      <div class="tagline">Expert Drainage Engineers</div>
+      <p>Professional drainage and plumbing specialists delivering fast, reliable, and permanent solutions for residential and commercial properties.</p>
+      <div class="footer-contact-card">
+        <a href="tel:07889537121">📞 07889 537121</a>
+        <a href="mailto:vcldrains@gmail.com" style="font-size:14px;font-weight:500;">✉ vcldrains@gmail.com</a>
+        <span>24/7 — Including Weekends & Bank Holidays</span>
+      </div>
+    </div>
+
+    <div>
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#">Drain Unblocking</a></li>
+        <li><a href="#">High Pressure Jetting</a></li>
+        <li><a href="#">CCTV Drain Surveys</a></li>
+        <li><a href="#">Drain Relining</a></li>
+        <li><a href="#">Root Cutting</a></li>
+        <li><a href="#">Drainpipe Descaling</a></li>
+        <li><a href="#">Concrete Cutting</a></li>
+        <li><a href="#">Tanker Services</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>More Services</h4>
+      <ul>
+        <li><a href="#">Gutter Cleaning</a></li>
+        <li><a href="#">Patio Wash Down</a></li>
+        <li><a href="#">Grease Trap Installation</a></li>
+        <li><a href="#">Gully Repairs</a></li>
+        <li><a href="#">Kitchen Unblocks</a></li>
+        <li><a href="#">Emergency Plumbing</a></li>
+        <li><a href="#">Dig Ups & Excavation</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Technology</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">Residential Services</a></li>
+        <li><a href="#">Commercial Services</a></li>
+        <li><a href="#">Free Estimate</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 DrainForce Pro. All rights reserved.</span>
+    <span>Fast Response. Clear Solutions. Every Time.</span>
+    <span>Fully Insured | Professional Engineers | Free Estimates</span>
+  </div>
+</footer>
+
+</body>
+</html>
